@@ -14,15 +14,10 @@
 <body>
 <div id ="box">123</div>
 <script type="text/javascript">
-    window.onload =function(event){
-        alert(1)
-        if(window.DeviceOrientationEvent){
-            alert(2)
-            window.addEventListener('deviceorientation',function(event){
-                alert(3)
-                var box  =document.getElementById("box");
-                box.html ='<p>'+event.alpha+'</p>'
-                box.style.webkitTransform = "rotate("+Math.round(event.alpha)+"get)"
+   window.onload =function(event){
+        if(window.orientationchange){
+            window.addEventListener('orientationchange',function(event){
+              alert(window.orientation)
             },false);
         }else{
             alert("您的浏览器不支持DeviceOrientation");
