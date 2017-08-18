@@ -15,9 +15,12 @@
 <div id ="box">123</div>
 <script type="text/javascript">
     window.onload =function(event){
+        alert(1)
         if(window.DeviceOrientationEvent){
+            alert(2)
             window.addEventListener('deviceorientation',function(event){
                 var box  =document.getElementById("box");
+                box.html ='<p>'+event.alpha+'</p>'
                 box.style.webkitTransform = "rotate("+Math.round(event.alpha)+"get)"
             },false);
         }else{
