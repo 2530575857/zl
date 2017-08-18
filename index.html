@@ -15,13 +15,11 @@
 <div id ="box">123</div>
 <script type="text/javascript">
    window.onload =function(event){
-        if(window.orientationchange){
+        
             window.addEventListener('orientationchange',function(event){
               alert(window.orientation)
             },false);
-        }else{
-            alert("您的浏览器不支持DeviceOrientation");
-        }
+      
 
 
 
